@@ -40,7 +40,7 @@ class Naics extends Component {
 		    .size([diameter - margin, diameter - margin])
 		    .padding(2);
 
-		d3.json('../../public/num_nest_sm.json', function(error, root) {
+		d3.json('../../public/num_nest_4yr.json', function(error, root) {
 		  if (error) throw error;
 
 		  root = d3.hierarchy(root)
