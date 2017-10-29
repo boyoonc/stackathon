@@ -19,9 +19,7 @@ class NaicsTime extends Component {
 		this.getyears()
 	}
 	componentDidMount(){
-		// console.log('state in componentDidMount', this.state)
-		// this.getyears()
-		this.createBubbles(this.getyears())
+		this.createBubbles(this.state.years)
 	}
 
 	componentDidUpdate(){
@@ -31,25 +29,15 @@ class NaicsTime extends Component {
 	clickHandler(e){
 		const year = e.target.value
 		this.setState({year})
-		console.log('in click handler', this.state)
-		// this.getyears()
-		// this.createBubbles(this.getyears())
 	}
 
 	getyears(){
 		let years = Object.keys(rev_nest)
-		// console.log(years)
-		// console.log(rev_nest)
-		// console.log(rev_nest['default'])
 		this.setState({years})
-		return years
 	}
 
 	createBubbles(years){
-		console.log('in bubble', this.state)
-		console.log(years)
 		let chosenYear = this.state.year
-		// console.log(this.getState())
 		var node = this.node
 		var svg = d3.select(node)
 		
@@ -129,8 +117,6 @@ class NaicsTime extends Component {
 
 	render() {
 		console.log('state in render!',this.state)
-		// this.getyears()
-		// this.createBubbles(this.state.years)
 		return (
 			<div>home component here
 				{this.state.years.map(year=>{
