@@ -19,3 +19,5 @@ router.get('/', (req, res, next)=>{
 
 //then?
 //create nested structure
+//then serve it up to component!
+
